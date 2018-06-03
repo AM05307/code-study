@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>6회 과제, 박스 모델의 이해</title>
+  <link rel="stylesheet" href="C:\Users\HONG\Desktop\GITTEST\code-study\홍수연\css\grid-guide.css">
+  <style>
+  /*3)번*/
+  .boxB .box2, .boxB .box3{
+    float: left;
+  }
+
+  /*4)번*/
+   /*grid-guide.css에서 적용된 class boxC의 border, background 속성 없앰*/
+  .boxC, .boxE{
+    border: none;
+    background : none;
+  }
+
+  .boxC::after, .boxE::after{
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  /*한줄에 박스 2개 4)번*/
+  .boxC > [class*="box"]{
+    float: left;
+  }
+  /*한줄에 박스 2개 5), 6), 7), 8)번*/
+  .boxD > [class*="box"]{
+    float: left;
+    width: 50%;
+  }
+  /*한줄에 박스 3개 9)번*/
+  .boxE > [class*="box"]{
+    float: left;
+    width: 33.333%;
+  }
+  /*한줄에 박스 4개 10)번*/
+  .boxF > [class*="box"]{
+    float: left;
+    width: 25%;
+  }
+  </style>
+
+</head>
+<body>
+
+  <p>1)박스 4개</p>
+  <div class="box1">
+   1번째 박스
+  </div>
+
+  <div class="box2">
+   2번째 박스
+  </div>
+
+  <div class="box3">
+   3번째 박스
+  </div>
+
+  <div class="box4">
+   4번째 박스
+  </div>
+  <br>
+
+  <p>2)박스 그룹화</p>
+  <div class="box1">
+   1번째 박스
+  </div>
+
+  <div class="boxA">
+    <div class="box2">
+     2번째 박스
+    </div>
+
+    <div class="box3">
+     3번째 박스
+    </div>
+  </div>
+
+  <div class="box4">
+   4번째 박스
+  </div>
+  <br>
+
+  <p>3)박스 그룹화, float 적용</p>
+  <div class="box1">
+   1번째 박스
+  </div>
+
+  <div class="boxB">
+    <div class="box2">
+     2번째 박스
+    </div>
+
+    <div class="box3">
+     3번째 박스
+    </div>
+  </div>
+
+  <div class="box4">
+   4번째 박스
+  </div>
+  <br>
+
+  <p>4)float 적용한 box 옆 비우기</p>
+  <div class="box1">
+   1번째 박스
+  </div>
+
+  <div class="boxC">
+    <div class="box2">
+     2번째 박스
+    </div>
+
+    <div class="box3">
+     3번째 박스
+    </div>
+  </div>
+
+  <div class="box4">
+   4번째 박스
+  </div>
+  <br>
+
+  <p>5) 박스 너비 지정</p>
+  <div class="box1">
+   1번째 박스
+  </div>
+
+  <div class="boxD">
+    <div class="box2">
+     2번째 박스
+    </div>
+
+    <div class="box3">
+     3번째 박스
+    </div>
+  </div>
+
+  <div class="box4">
+   4번째 박스
+  </div>
+  <br>
+
+  <p>6)문제:박스 2개/1개/1개 배치</p>
+  <div class="boxD">
+    <div class="box1">
+      1번째 박스
+    </div>
+    <div class="box2">
+      2번째 박스
+    </div>
+  </div>
+  <div class="box3">
+    3번째박스
+  </div>
+  <div class="box4">
+    4번째박스
+  </div>
+  <br>
+
+  <p>7)문제:박스 2개/1개/1개 배치</p>
+  <div class="box1">
+    1번째 박스
+  </div>
+  <div class="box2">
+    2번째 박스
+  </div>
+  <div class="boxD">
+    <div class="box3">
+      3번째박스
+    </div>
+    <div class="box4">
+      4번째박스
+    </div>
+  </div>
+  <br>
+
+  <p>8)문제:박스 2개/2개 배치</p>
+  <div class="boxD">
+     <div class="box1">
+      1번째 박스
+      </div>
+    <div class="box2">
+      2번째 박스
+    </div>
+  </div>
+  <div class="boxD">
+    <div class="box3">
+      3번째박스
+    </div>
+    <div class="box4">
+      4번째박스
+    </div>
+  </div>
+  <br>
+
+  <p>9)문제:박스 3개/1개 가로로 배치</p>
+  <div class="boxE">
+    <div class="box1">
+      1번째 박스
+    </div>
+    <div class="box2">
+      2번째 박스
+    </div>
+    <div class="box3">
+      3번째 박스
+    </div>
+  </div>
+  <div class="box4">
+    4번째 박스
+  </div>
+  <br>
+
+  <p>10)문제:박스 4개 가로로 배치</p>
+  <div class="boxF">
+    <div class="box1">
+      1번째 박스
+    </div>
+    <div class="box2">
+      2번째 박스
+    </div>
+    <div class="box3">
+      3번째 박스
+    </div>
+    <div class="box4">
+      4번째 박스
+    </div>
+  </div>
+  <br>
+
+</body>
+</html>
