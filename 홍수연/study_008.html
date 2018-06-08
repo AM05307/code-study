@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>8회차</title>
+  <style>
+    /* 제목 css */
+    p[id^="display_"]{
+    font-weight: bold;
+    }
+    span[id^="display_"]{
+    font-weight: bold;
+    }
+    /* 박스 css */
+    [class^="box"]{
+      padding: 15px;
+      box-sizing: border-box;
+      font-weight: bold;
+      text-align: center;
+    }
+    .box1{
+      background-color: #ff0000;
+    }
+    .box2{
+      background-color:#faff00;
+      width: 300px;
+      float: left;
+    }
+    .box3{
+      background-color: #ff00ed;
+      margin-left: 300px;
+      width: auto;
+    }
+    .box4{
+      background-color: #00ff40;
+      width: 100%;
+      overflow: hidden;
+    }
+    #display_1200px{
+      display: block;
+    }
+    /* display 크기가 769px이상 일때는 나타나지 않음 */
+    #display_768px, #display_380px {
+      display: none;
+    }
+
+    /* [768px 이하]에서는 박스 4개가 나란히 정렬되도록 지정 */
+    @media screen and (min-width: 381px) and (max-width: 768px) {
+      .box2{
+        width: 100%;
+        float: 100%;
+      }
+      .box3{
+        margin: 0;
+        width: 100%;
+      }
+      #display_1200px{
+        display: none;
+      }
+      #display_768px{
+        display: block;
+      }
+    }
+
+    /* [380px이하]에서 첫번째 박스, 두번째 박스, 세번째 박스, 네번째 박스를 다른 색으로 변경 */
+    @media (max-width:380px) {
+      .box1{
+        background-color: rgba(175, 109, 236, 0.5);
+      }
+      .box2{
+        background-color: rgba(255, 130, 198, 0.5);
+        width: 100%;
+      }
+      .box3{
+        background-color: rgba(255, 103, 125, 0.5);
+        margin-left: 0px;
+      }
+      .box4{
+        background-color: rgba(117, 193, 255, 0.5);
+      }
+      #display_1200px{
+        display: none;
+      }
+      #display_380px{
+        display: inline;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p id="display_1200px">[반응형 홈페이지 코딩법 (mediaquery)]<br>
+    display width : 769px 이상<br>
+    두번째 박스를 300px로 고정하고 우측 박스의 width는 자동으로 작동
+    </p>
+
+    <p id="display_768px">[반응형 홈페이지 코딩법 (mediaquery)]<br>
+    display width : 381px이상 ~ 768px 이하
+    </p>
+
+    <span id="display_380px">[반응형 홈페이지 코딩법 (mediaquery)]<br>
+    display width : 380px 이하
+    </span>
+    <hr>
+  </header>
+
+  <section>
+    <div class="box1">
+      첫번째 박스
+    </div>
+
+    <div class="classA">
+      <div class="box2">
+        두번째 박스<br>
+        두번째 박스<br>
+        두번째 박스
+      </div>
+      <div class="box3">
+        세번째 박스<br>
+        세번째 박스<br>
+        세번째 박스
+      </div>
+    </div>
+
+    <div class="box4">
+      네번째 박스
+    </div>
+  </section>
+</body>
+</html>
